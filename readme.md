@@ -2,6 +2,10 @@
 
 Allows adding a setting to ACF fields to save the field's data to wp_postmeta. This is a work in progress, use at your own risk.
 
+## WARNING
+
+The official ACF team has mentionned that they would add this in core relatively soon. You can follow the related issue [here](https://github.com/AdvancedCustomFields/acf/issues/83).
+
 ## Requirements
 
 - [Composer](https://getcomposer.org/download/)
