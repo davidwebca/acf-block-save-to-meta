@@ -26,9 +26,11 @@ Every field you need to have saved to post meta needs to have its option checked
 
 ## Known issues
 
-Currently, this code always saves all the block's data as an array to avoid collision when multiple of the same block is used on the page. This was the easiest implementation I could whip out quickly, but it brings the problem of being unable to query the meta reliably since it's always serialized. Ideally there would be a check on the block's settings for "multiple" being true and adjust how it's saved by that. Or even add a custom table to link the meta to the block and post ID? 🤔
+Currently, this code doesn't check if multiple of the same block or if multiple fields have the same name. If multiple blocks have the option "Save to meta" enabled, or if multiple of these blocks have identical field names, the latest one added to the editor will be the prevalent data, thus the one that will be saved to meta.
 
-Another solution could be simply to never allow saving to meta when "multiple" isn't true.
+A future solution might be added to never allow saving to meta when "multiple" isn't true, but it is currently impractical or impossible to implement.
+
+Also, you'll have to use the regular "get_post_meta()" outside of the post's single (in loops etc.) to get the data because ACF currently looks up field values with "get_field" which passes through some location validation. Since our field is not associated to the post, but to a block on the post, it doesn't always return the right value, especially if you're migrating from a real post (meta) location to a block.
 
 ## Bug Reports and contributions
 
