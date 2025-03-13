@@ -1,3 +1,7 @@
+# ⚠️ NOT NECESSARY ANYMORE
+
+Since [ACF 6.3 released on May 22nd 2024](https://www.advancedcustomfields.com/blog/acf-6-3-0-released/), it is now possible to save a block's meta with a core flag in block.json. Please update to a new version and use that instead. This repo will gladly never get touched again. 
+
 # ACF Block Save To Meta [WIP]
 
 Allows adding a setting to ACF fields to save the field's data to wp_postmeta. This is a work in progress, use at your own risk.
